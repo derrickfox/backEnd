@@ -7,7 +7,6 @@ exports.test = function (req, res) {
 
 // controllers/products.js
 exports.product_create = function (req, res) {
-    console.log('req', req);
     let product = new Product(
         {
             name: req.body.name,
@@ -42,5 +41,13 @@ exports.product_delete = function (req, res) {
     Product.findByIdAndRemove(req.params.id, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully!');
+    })
+};
+
+exports.product_get_all = function (req, res) {
+    Product.find({}, function (err, products) {
+        console.log('products', products);
+        if (err) return next(err);
+        res.send(products);
     })
 };
