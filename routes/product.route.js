@@ -12,4 +12,17 @@ router.get('/:id', product_controller.product_details);
 router.put('/:id/update', product_controller.product_update);
 router.delete('/:id/delete', product_controller.product_delete);
 
+const testArr = [1, 2, 3, 4];
+testArr.forEach(function(i) {
+    console.log('i', i);
+})
+
+// // Where 'links' are the endpoints you want enabled/listed.
+// links.forEach(function(link) {
+//     router.get(link.regex, function(req, res, next) {
+//       console.log("trying to open " + link.url);
+//       res.render(link.url, { title: link.title, link: link });
+//     });
+//   });
+
 module.exports = router;

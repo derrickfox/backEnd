@@ -46,7 +46,7 @@ exports.source_delete = function (req, res) {
 
 exports.source_get_all = function (req, res) {
     Source.find({}, function (err, sources) {
-        console.log('sources', sources);
+        // console.log('sources', sources);
         if (err) return next(err);
         res.send(sources);
     })
